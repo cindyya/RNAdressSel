@@ -1,0 +1,19 @@
+# Logs
+*.log
+
+# Runtime data
+tmp
+.fontcustom-manifest.json
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+bower_components
+
+
+
+android/build
+android/.gradle
+android/.idea
+android/gradle
+.DS_Store
