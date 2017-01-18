@@ -1,5 +1,6 @@
 package com.cityChoose;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import com.cityChoose.city.CityActivity;
@@ -32,8 +33,8 @@ public class CityChooseModule extends ReactContextBaseJavaModule implements Acti
     getCurrentActivity().startActivityForResult(intent,1001);
   }
 
-  @Override
-  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+@Override
+public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     if(requestCode==1001){
       String city = data.getStringExtra("city");
       if(mcallback!=null){
@@ -41,5 +42,10 @@ public class CityChooseModule extends ReactContextBaseJavaModule implements Acti
         mcallback=null;
       }
     }
+}
+
+  @Override
+  public void onNewIntent(Intent intent) {
+
   }
 }

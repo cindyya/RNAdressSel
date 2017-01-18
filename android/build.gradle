@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:0.20.+'
+    compile 'com.facebook.react:react-native:0.37.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('src/main/libs/pinyin4android1.0.jar')
     compile files('src/main/libs/pinyin4j-2.5.0.jar')
