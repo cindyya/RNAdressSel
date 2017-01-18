@@ -77,7 +77,7 @@ public class CityActivity extends Activity implements OnScrollListener {
 		backview.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				sendData("");
+				finish();
 			}
 		});
 		personList = (ListView) findViewById(R.id.citylist_view);
@@ -183,7 +183,7 @@ public class CityActivity extends Activity implements OnScrollListener {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			sendData("");
+			finish();
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -197,6 +197,9 @@ public class CityActivity extends Activity implements OnScrollListener {
 		finish();
 	}
 	public void InsertCity(String name) {
+		if(name==null||name.equals("")){
+			return;
+		}
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery("select * from recentcity where name = '"
 				+ name + "'", null);

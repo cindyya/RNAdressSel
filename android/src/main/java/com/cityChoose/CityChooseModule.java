@@ -36,9 +36,11 @@ public class CityChooseModule extends ReactContextBaseJavaModule implements Acti
 @Override
 public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     if(requestCode==1001){
-      String city = data.getStringExtra("city");
       if(mcallback!=null){
-        mcallback.invoke(city);
+        if(data!=null){
+          String city = data.getStringExtra("city");
+          mcallback.invoke(city);
+        }
         mcallback=null;
       }
     }
